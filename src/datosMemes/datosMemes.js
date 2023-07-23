@@ -187,14 +187,6 @@ let datosMemes ={
                 "box_count": 2
             },
             {
-                "id": "216951317",
-                "name": "Guy Holding Cardboard Sign",
-                "url": "https://i.imgflip.com/3l60ph.jpg",
-                "width": 700,
-                "height": 702,
-                "box_count": 2
-            },
-            {
                 "id": "119139145",
                 "name": "Blank Nut Button",
                 "url": "https://i.imgflip.com/1yxkcp.jpg",

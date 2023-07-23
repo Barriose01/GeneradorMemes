@@ -21,6 +21,7 @@ function Formulario(){
         evento.preventDefault();
         let objetoMeme = memeAleatorio();
         nombreMeme = objetoMeme.name;
+        
 
         setMeme((memeAnterior)=>{
             return {
