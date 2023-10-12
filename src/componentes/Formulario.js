@@ -1,5 +1,4 @@
 import React from "react";
-import datosMemes from "../datosMemes/datosMemes";
 
 function Formulario(){
 
@@ -9,20 +8,24 @@ function Formulario(){
         imagenURL: "https://i.imgflip.com/26jxvz.jpg"
     });
 
-    let imagenesMemes = datosMemes;
+    let [infoMemes,setInfoMemes] = React.useState();
     let nombreMeme = "";
 
+    React.useEffect(()=>{
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(datosMeme => setInfoMemes(datosMeme.data.memes));
+    },[])
+
     function memeAleatorio(){
-        let posicionMeme = Math.floor(Math.random() * (imagenesMemes.data.memes.length - 0 + 1)) + 0;
-        return imagenesMemes.data.memes[posicionMeme];
+        let posicionMeme = Math.floor(Math.random() * (infoMemes.length - 0 + 1)) + 0;
+        return infoMemes[posicionMeme];
     }
     
     function devolverImagen(evento){
         evento.preventDefault();
         let objetoMeme = memeAleatorio();
         nombreMeme = objetoMeme.name;
-        
-
         setMeme((memeAnterior)=>{
             return {
                 ...memeAnterior,
